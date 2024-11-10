@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tales - Sign In</title>
+    <style>
+        
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #080808;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #3a3a3a;
+            color: #ffffff;
+            padding: 16px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 0.5em;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ff6f61;
+            border-radius: 5px;
+        }
+        .content {
+            padding: 3em;
+            margin-top: 110px; 
+        }
+        .signin {
+            max-width: 400px;
+            margin: auto;
+            padding: 2em;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .signin h2 {
+            text-align: center;
+        }
+        .signin input[type="text"], 
+        .signin input[type="password"] {
+            width: 100%;
+            padding: 0.8em;
+            margin: 0.5em 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .signin button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .signin button:hover {
+            background-color: #e05546;
+        }
+        .signin p {
+            text-align: center;
+            margin-top: 1em;
+        }
+        .signin a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+        .signin a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: #f8f4f4;
+            text-align: center;
+            padding: 2em 2em;
+            margin-top: 3em;
+        }
+        footer .contact-info {
+            margin: 1em 0;
+        }
+        footer h3 {
+            margin-bottom: 0.5em;
+        }
+        footer p, footer a {
+            color: #f8f4f4;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Error message styling */
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -0.5em;
+            margin-bottom: 0.5em;
+            display: none;
+        }
+    </style>
+    <script>
+        function validateInput(inputId, errorId, pattern, errorMessage) {
+            const inputElement = document.getElementById(inputId);
+            const errorElement = document.getElementById(errorId);
+            
+            inputElement.addEventListener("input", function() {
+                if (!pattern.test(inputElement.value.trim())) {
+                    errorElement.textContent = errorMessage;
+                    errorElement.style.display = "block";
+                } else {
+                    errorElement.style.display = "none";
+                }
+            });
+        }
+
+        window.onload = function() {
+            // Validate each field with a specific pattern and error message
+            validateInput("name", "name-error", /^[A-Za-z\s]+$/, "Please enter a valid name.");
+            validateInput("phone", "phone-error", /^[0-9]+$/, "Please enter a valid phone number (digits only).");
+            validateInput("email", "email-error", /^[^ ]+@[^ ]+\.[a-z]{2,3}$/, "Please enter a valid email address.");
+            validateInput("password", "password-error", /^.{6,}$/, "Password must be at least 6 characters long.");
+        };
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Explore the World with Travel Tales</h1>
+        <nav>
+            <a href="Home.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="our services.html">Our Services</a>
+            <a href="Travel Tips.html">Travel Tips</a>
+            <a href="signin.html">Sign In</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="signin">
+            <h2>Sign In</h2>
+            <form id="signin-form" action="signin_process.php" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+                <p id="name-error" class="error-message"></p>
+                
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number" required>
+                <p id="phone-error" class="error-message"></p>
+                
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter your Email" required>
+                <p id="email-error" class="error-message"></p>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+                <p id="password-error" class="error-message"></p>
+                
+                <button >LOG IN</button>
+            </form>
+            <p><a href="forgot_password.html">Forgot Password?</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:support@traveltales.com">support@traveltales.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p>Address: Phagwara, Jalandhar City, India</p>
+        </div>
+        <p>&copy; 2024 Travel Tales. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

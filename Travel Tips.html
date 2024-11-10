@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tales - Travel Tips</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #080808;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #3a3a3a;
+            color: #ffffff;
+            padding: 16px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 0.5em;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ff6f61;
+            border-radius: 5px;
+        }
+
+        .content {
+            padding: 3em 1em;
+            margin-top: 80px; 
+        }
+
+        .travel-tips {
+            margin: 3em 0;
+            padding: 3em;
+            text-align: center;
+            background: linear-gradient(to right, #ff6f61, #ff9e6d);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip {
+            margin-bottom: 2em;
+            padding: 2em;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 1em;
+        }
+
+        .tip:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .tip-icon {
+            font-size: 3em;
+            color: #ff6f61;
+            transition: color 0.3s ease;
+        }
+
+        .tip-icon:hover {
+            color: #ff9e6d;
+        }
+
+        .tip h3 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .tip p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #333;
+            color: #f8f4f4;
+            text-align: center;
+            padding: 2em 1em;
+            margin-top: 3em;
+        }
+
+        footer a {
+            color: #f8f4f4;
+            text-decoration: none;
+            margin: 0 0.5em;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+       
+        .travel-tips, .tip {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .travel-tips {
+            animation-delay: 0.3s;
+        }
+
+        .tip {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Explore the World with Travel Tales</h1>
+        <nav>
+            <a href="Home.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="our services.html">Our Services</a>
+            <a href="Travel Tips.html">Travel Tips</a>
+            <a href="Sign in.html">Sign In</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <section id="tips" class="travel-tips">
+            <h2 class="section-header">Travel Tips</h2>
+            <div class="tip">
+                <div class="tip-icon">🧳</div>
+                <div>
+                    <h3>Packing Essentials</h3>
+                    <p>Pack light, carry essentials like travel insurance, and keep digital backups of important documents. Make sure you have a power bank, some extra snacks, and a universal adapter!</p>
+                </div>
+            </div>
+            <div class="tip">
+                <div class="tip-icon">🌍</div>
+                <div>
+                    <h3>Local Etiquette</h3>
+                    <p>Always respect local customs and traditions; a little research goes a long way. Understanding basic phrases like “hello” and “thank you” can also be very helpful and appreciated!</p>
+                </div>
+            </div>
+            <div class="tip">
+                <div class="tip-icon">💳</div>
+                <div>
+                    <h3>Money Management</h3>
+                    <p>Carry a mix of cash and cards, and notify your bank before international travel to avoid card issues. Always have a small amount of local currency for tips or small purchases when needed.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        
+    </footer>
+
+</body>
+</html>
